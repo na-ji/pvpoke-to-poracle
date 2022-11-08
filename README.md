@@ -1,5 +1,5 @@
 # PvPoke.com to Poracle
-A simple repo that convert the rankings of PvPoke.com to Poracle commands or Pokémon aliases. 
+A simple repo that convert the [rankings of PvPoke.com](https://pvpoke.com/rankings/) to [Poracle](https://github.com/KartulUdus/PoracleJS) commands or Pokémon aliases. 
 All of those commands/aliases are updated automatically on the CI.
 
 ## Pokemon aliases
