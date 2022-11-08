@@ -1,0 +1,40 @@
+name: Update generated files
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    name: Update pvp data
+    defaults:
+      run:
+        shell: bash
+        working-directory: generator
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Use Node.js v16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Update files
+        run: npm start
+      - name: Commit changes
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_author: PVP Updater <pvp-updater@github.com>
+          commit_message: "chore: Update PVP Data"
+          commit_user_name: PVP Updater
+          file_pattern: '*.json *.txt *.md'
+      - name: Run if changes have been detected
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: echo "Changes!"
+      - name: Run if no changes have been detected
+        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+        run: echo "No Changes!"
