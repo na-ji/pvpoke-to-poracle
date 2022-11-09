@@ -3,6 +3,8 @@ A simple repo that convert the [rankings of PvPoke.com](https://pvpoke.com/ranki
 All of those commands/aliases are updated automatically on the CI.
 
 ## Pokemon aliases
+Add those aliases to the file `config/pokemonAlias.json`. 
+
 <!-- aliases-start -->
 ```json
 {
@@ -22,7 +24,14 @@ All of those commands/aliases are updated automatically on the CI.
 ```
 <!-- aliases-end -->
 
+After restarting Poracle, you can easily track those Pokémon like this:
+```shell
+!track top30Great great1
+!track top30Ultra ultra1
+```
+
 ## Commands
+Poracle is able to process track commands in bulk, so you can easily copy and paste those commands to track every Pokémon.
 
 ### Rank 1 of the top 30 Pokémon in great league ranking
 <!-- top30great-start -->
