@@ -1,6 +1,7 @@
 name: Update generated files
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 12 * * *'
 
@@ -15,11 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Use Node.js v16.x
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          cache-dependency-path: generator/package-lock.json
           cache: npm
+          node-version-file: generator/package.json
       - name: Install dependencies
         run: npm ci
       - name: Update files
