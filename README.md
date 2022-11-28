@@ -10,7 +10,7 @@ Add those aliases to the file `config/pokemonAlias.json`.
 {
   "top30Great": [
     618, 379, 709, 260, 411, 308, 334, 108, 560, 660, 340, 832, 799, 68, 227,
-    460, 365, 31, 867, 784, 171, 377, 748, 630, 351, 478, 302, 184, 488
+    460, 31, 867, 365, 784, 171, 630, 748, 377, 351, 478, 302, 184, 488
   ],
   "top30Ultra": [
     379, 638, 487, 709, 260, 208, 488, 377, 640, 31, 794, 618, 799, 862, 365,
@@ -52,14 +52,14 @@ Poracle is able to process track commands in bulk, so you can easily copy and pa
 !track 68 great1
 !track 227 great1
 !track 460 great1
-!track 365 great1
 !track 31 great1
 !track 867 great1
+!track 365 great1
 !track 784 great1
 !track 171 great1
-!track 377 great1
-!track 748 great1
 !track 630 great1
+!track 748 great1
+!track 377 great1
 !track 351 great1
 !track 478 great1
 !track 302 great1
