@@ -9,16 +9,16 @@ Add those aliases to the file `config/pokemonAlias.json`.
 ```json
 {
   "top30Great": [
-    379, 618, 411, 279, 260, 164, 709, 18, 560, 334, 226, 308, 108, 472, 38,
-    340, 699, 68, 799, 171, 630, 460, 784, 227, 184, 660, 377, 197, 365
+    379, 618, 308, 260, 560, 411, 709, 279, 164, 334, 472, 108, 171, 18, 68,
+    832, 784, 302, 799, 226, 340, 630, 288, 660, 38, 377, 202, 197, 699
   ],
   "top30Ultra": [
-    379, 18, 638, 487, 472, 709, 260, 377, 208, 488, 799, 640, 862, 6, 794, 560,
-    699, 788, 618, 365, 378, 832, 460, 144, 630, 663, 149, 279, 241
+    379, 18, 638, 487, 472, 709, 260, 377, 208, 488, 799, 862, 640, 6, 794, 699,
+    560, 618, 788, 365, 378, 460, 832, 144, 630, 663, 149, 279, 241
   ],
   "top30Master": [
-    149, 249, 487, 791, 648, 888, 150, 383, 717, 644, 716, 671, 130, 473, 643,
-    250, 484, 483, 893, 645, 649, 809, 143, 260, 376, 901, 382, 445, 794
+    249, 149, 487, 791, 888, 648, 150, 383, 717, 644, 716, 671, 130, 473, 643,
+    250, 484, 483, 893, 645, 649, 809, 143, 260, 376, 901, 794, 445, 382
   ]
 }
 ```
@@ -38,33 +38,33 @@ Poracle is able to process track commands in bulk, so you can easily copy and pa
 ```
 !track 379 great1
 !track 618 great1
-!track 411 great1
-!track 279 great1
-!track 260 great1
-!track 164 great1
-!track 709 great1
-!track 18 great1
-!track 560 great1
-!track 334 great1
-!track 226 great1
 !track 308 great1
-!track 108 great1
+!track 260 great1
+!track 560 great1
+!track 411 great1
+!track 709 great1
+!track 279 great1
+!track 164 great1
+!track 334 great1
 !track 472 great1
-!track 38 great1
-!track 340 great1
-!track 699 great1
-!track 68 great1
-!track 799 great1
+!track 108 great1
 !track 171 great1
-!track 630 great1
-!track 460 great1
+!track 18 great1
+!track 68 great1
+!track 832 great1
 !track 784 great1
-!track 227 great1
-!track 184 great1
+!track 302 great1
+!track 799 great1
+!track 226 great1
+!track 340 great1
+!track 630 great1
+!track 288 great1
 !track 660 great1
+!track 38 great1
 !track 377 great1
+!track 202 great1
 !track 197 great1
-!track 365 great1
+!track 699 great1
 ```
 <!-- top30great-end -->
 
@@ -82,18 +82,18 @@ Poracle is able to process track commands in bulk, so you can easily copy and pa
 !track 208 ultra1
 !track 488 ultra1
 !track 799 ultra1
-!track 640 ultra1
 !track 862 ultra1
+!track 640 ultra1
 !track 6 ultra1
 !track 794 ultra1
-!track 560 ultra1
 !track 699 ultra1
-!track 788 ultra1
+!track 560 ultra1
 !track 618 ultra1
+!track 788 ultra1
 !track 365 ultra1
 !track 378 ultra1
-!track 832 ultra1
 !track 460 ultra1
+!track 832 ultra1
 !track 144 ultra1
 !track 630 ultra1
 !track 663 ultra1
