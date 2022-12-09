@@ -36,69 +36,13 @@ Poracle is able to process track commands in bulk, so you can easily copy and pa
 ### Rank 1 of the top 30 Pokémon in great league ranking
 <!-- top30great-start -->
 ```
-!track 379 great1
-!track 618 great1
-!track 308 great1
-!track 260 great1
-!track 560 great1
-!track 411 great1
-!track 709 great1
-!track 279 great1
-!track 164 great1
-!track 334 great1
-!track 472 great1
-!track 108 great1
-!track 171 great1
-!track 18 great1
-!track 68 great1
-!track 832 great1
-!track 784 great1
-!track 302 great1
-!track 799 great1
-!track 226 great1
-!track 340 great1
-!track 630 great1
-!track 288 great1
-!track 660 great1
-!track 38 great1
-!track 377 great1
-!track 202 great1
-!track 197 great1
-!track 699 great1
+!track great1 379 618 308 260 560 411 709 279 164 334 472 108 171 18 68 832 784 302 799 226 340 630 288 660 38 377 202 197 699
 ```
 <!-- top30great-end -->
 
 ### Rank 1 of the top 30 Pokémon in ultra league ranking
 <!-- top30ultra-start -->
 ```
-!track 379 ultra1
-!track 18 ultra1
-!track 638 ultra1
-!track 487 ultra1
-!track 472 ultra1
-!track 709 ultra1
-!track 260 ultra1
-!track 377 ultra1
-!track 208 ultra1
-!track 488 ultra1
-!track 799 ultra1
-!track 862 ultra1
-!track 640 ultra1
-!track 6 ultra1
-!track 794 ultra1
-!track 699 ultra1
-!track 560 ultra1
-!track 618 ultra1
-!track 788 ultra1
-!track 365 ultra1
-!track 378 ultra1
-!track 460 ultra1
-!track 832 ultra1
-!track 144 ultra1
-!track 630 ultra1
-!track 663 ultra1
-!track 149 ultra1
-!track 279 ultra1
-!track 241 ultra1
+!track ultra1 379 18 638 487 472 709 260 377 208 488 799 862 640 6 794 699 560 618 788 365 378 460 832 144 630 663 149 279 241
 ```
 <!-- top30ultra-end -->

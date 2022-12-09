@@ -82,7 +82,7 @@ const writeAliases = async (aliases: Record<string, number[]>): Promise<void> =>
 };
 
 const dexListToPoracleCommands = (dexList: number[], leagueRanking: string): string => {
-  return dexList.map((dexNumber) => `!track ${dexNumber} ${leagueRanking}`).join(`\n`);
+  return `!track ${leagueRanking} ${dexList.join(' ')}`;
 };
 
 const writePoracleCommands = async (poracleCommands: string, fileName: string): Promise<void> => {
