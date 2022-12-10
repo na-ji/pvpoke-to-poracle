@@ -71,6 +71,10 @@ const rankingToDexList = (ranking: Ranking[], rankingSize = 30): number[] => {
 
         return pokemon;
       })
+      // remove not available in the wild
+      .filter((pokemon, index, self) => {
+        return !pokemon.tags?.includes(PokemonTags.SHADOW);
+      })
       // remove duplicates
       .filter((pokemon, index, self) => {
         return index === self.findIndex((pokemon2) => pokemon2.dex === pokemon.dex);
