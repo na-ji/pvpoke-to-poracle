@@ -3,9 +3,25 @@ import path from 'path';
 import prettier from 'prettier';
 import { readFile, writeFile } from 'fs/promises';
 
+enum PokemonTags {
+  LEGENDARY = 'legendary',
+  MYTHICAL = 'mythical',
+  ALOLAN = 'alolan',
+  GALARIAN = 'galarian',
+  STARTER = 'starter',
+  REGIONAL = 'regional',
+  SHADOW = 'shadow',
+  SHADOWELIGIBLE = 'shadoweligible',
+  UNTRADEABLE = 'untradeable',
+  MEGA = 'mega',
+  XS = 'xs',
+  HISUIAN = 'hisuian',
+}
+
 interface Pokemon {
   dex: number;
   speciesId: string;
+  tags?: PokemonTags[];
 }
 
 interface Ranking {
@@ -41,21 +57,37 @@ const fetchRanking = async (rankingName = 'rankings-1500'): Promise<Ranking[]> =
 };
 
 const rankingToDexList = (ranking: Ranking[], rankingSize = 30): number[] => {
-  return ranking
-    .slice(0, rankingSize * 2)
-    .map((rank) => {
-      const pokemon = pokemonList.find((pokemon) => pokemon.speciesId === rank.speciesId);
+  let count = 1;
 
-      if (!pokemon) {
-        throw new Error(`Failed to find species ${rank.speciesId}`);
-      }
+  return (
+    ranking
+      .slice(0, rankingSize * 2)
+      .map((rank) => {
+        const pokemon = pokemonList.find((pokemon) => pokemon.speciesId === rank.speciesId);
 
-      return pokemon.dex;
-    })
-    .filter((item, pos, self) => {
-      return self.indexOf(item) === pos;
-    })
-    .slice(0, rankingSize - 1);
+        if (!pokemon) {
+          throw new Error(`Failed to find species ${rank.speciesId}`);
+        }
+
+        return pokemon;
+      })
+      // remove duplicates
+      .filter((pokemon, index, self) => {
+        return index === self.findIndex((pokemon2) => pokemon2.dex === pokemon.dex);
+      })
+      // slice by ignoring legendaries
+      .filter((pokemon, index) => {
+        if (count < rankingSize) {
+          if (!pokemon.tags?.includes(PokemonTags.LEGENDARY) && !pokemon.tags?.includes(PokemonTags.MYTHICAL)) {
+            count++;
+          }
+          return true;
+        }
+
+        return false;
+      })
+      .map((pokemon) => pokemon.dex)
+  );
 };
 
 const writeToReadme = async (textToWrite: string, tag: string): Promise<void> => {
