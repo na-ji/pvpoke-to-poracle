@@ -10,7 +10,7 @@ Add those aliases to the file `config/pokemonAlias.json`.
 {
   "top30Great": [
     379, 618, 308, 260, 560, 411, 709, 279, 164, 334, 472, 108, 171, 18, 68,
-    832, 784, 302, 799, 226, 340, 630, 288, 660, 38, 377, 202, 197, 699, 386,
+    832, 302, 784, 799, 226, 340, 288, 630, 38, 377, 660, 202, 197, 699, 386,
     460, 149, 748
   ],
   "top30Ultra": [
@@ -40,7 +40,7 @@ Also, since legendaries are not always available in the wild, they aren't counte
 ### Rank 1 of the top 30 Pokémon in great league ranking
 <!-- top30great-start -->
 ```
-!track great1 379 618 308 260 560 411 709 279 164 334 472 108 171 18 68 832 784 302 799 226 340 630 288 660 38 377 202 197 699 386 460 149 748
+!track great1 379 618 308 260 560 411 709 279 164 334 472 108 171 18 68 832 302 784 799 226 340 288 630 38 377 660 202 197 699 386 460 149 748
 ```
 <!-- top30great-end -->
 
