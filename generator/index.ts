@@ -129,15 +129,18 @@ const writePoracleCommands = async (poracleCommands: string, fileName: string): 
   await writeToReadme(`\`\`\`\n${poracleCommands}\n\`\`\``, fileName);
 };
 
+const littleLeagueRankings = await fetchRanking('rankings-500');
 const greatLeagueRankings = await fetchRanking('rankings-1500');
 const ultraLeagueRankings = await fetchRanking('rankings-2500');
 const masterLeagueRankings = await fetchRanking('rankings-10000');
 
 await writeAliases({
+  top30Little: rankingToDexList(littleLeagueRankings),
   top30Great: rankingToDexList(greatLeagueRankings),
   top30Ultra: rankingToDexList(ultraLeagueRankings),
   top30Master: rankingToDexList(masterLeagueRankings),
 });
 
+await writePoracleCommands(dexListToPoracleCommands(rankingToDexList(littleLeagueRankings), 'little1'), 'top30little');
 await writePoracleCommands(dexListToPoracleCommands(rankingToDexList(greatLeagueRankings), 'great1'), 'top30great');
 await writePoracleCommands(dexListToPoracleCommands(rankingToDexList(ultraLeagueRankings), 'ultra1'), 'top30ultra');
