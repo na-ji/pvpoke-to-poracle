@@ -8,6 +8,10 @@ Add those aliases to the file `config/pokemonAlias.json`.
 <!-- aliases-start -->
 ```json
 {
+  "top30Little": [
+    436, 360, 86, 263, 629, 580, 207, 108, 633, 194, 37, 624, 133, 320, 104,
+    971, 447, 616, 174, 698, 425, 339, 996, 661, 152, 147, 915, 564, 95
+  ],
   "top30Great": [
     108, 488, 379, 703, 260, 227, 171, 226, 411, 630, 799, 979, 618, 184, 207,
     308, 288, 340, 279, 497, 980, 634, 195, 784, 593, 560, 62, 997, 748, 709,
@@ -29,6 +33,7 @@ Add those aliases to the file `config/pokemonAlias.json`.
 
 After restarting Poracle, you can easily track those Pokémon like this:
 ```shell
+!track top30Little little1
 !track top30Great great1
 !track top30Ultra ultra1
 ```
@@ -36,6 +41,13 @@ After restarting Poracle, you can easily track those Pokémon like this:
 ## Commands
 Poracle is able to process track commands in bulk, so you can easily copy and paste those commands to track every Pokémon. 
 Also, since legendaries are not always available in the wild, they aren't counted when making the top 30, but still added to the list just in case.
+
+### Rank 1 of the top 30 Pokémon in little league ranking
+<!-- top30little-start -->
+```
+!track little1 436 360 86 263 629 580 207 108 633 194 37 624 133 320 104 971 447 616 174 698 425 339 996 661 152 147 915 564 95
+```
+<!-- top30little-end -->
 
 ### Rank 1 of the top 30 Pokémon in great league ranking
 <!-- top30great-start -->
