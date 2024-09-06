@@ -11,11 +11,12 @@ enum PokemonTags {
   STARTER = 'starter',
   REGIONAL = 'regional',
   SHADOW = 'shadow',
-  SHADOWELIGIBLE = 'shadoweligible',
+  SHADOW_ELIGIBLE = 'shadoweligible',
   UNTRADEABLE = 'untradeable',
   MEGA = 'mega',
   XS = 'xs',
   HISUIAN = 'hisuian',
+  ULTRA_BEAST = 'ultrabeast',
 }
 
 interface Pokemon {
@@ -27,6 +28,8 @@ interface Pokemon {
 interface Ranking {
   speciesId: string;
 }
+
+const ignoredTags = [PokemonTags.LEGENDARY, PokemonTags.MYTHICAL, PokemonTags.ULTRA_BEAST];
 
 const fetchPokemonList = async (): Promise<Pokemon[]> => {
   console.log('Fetching game master');
@@ -82,7 +85,7 @@ const rankingToDexList = (ranking: Ranking[], rankingSize = 30): number[] => {
       // slice by ignoring legendaries
       .filter((pokemon, index) => {
         if (count < rankingSize) {
-          if (!pokemon.tags?.includes(PokemonTags.LEGENDARY) && !pokemon.tags?.includes(PokemonTags.MYTHICAL)) {
+          if (!pokemon.tags?.some((tag) => ignoredTags.includes(tag))) {
             count++;
           }
           return true;
