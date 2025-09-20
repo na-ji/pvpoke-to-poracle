@@ -35,8 +35,7 @@ const fetchPokemonList = async (): Promise<Pokemon[]> => {
   console.log('Fetching game master');
 
   const { pokemon } = (await (
-    await fetch('https://pvpoke.com/data/gamemaster.min.json', {
-      referrer: 'https://pvpoke.com/rankings/',
+    await fetch('https://raw.githubusercontent.com/pvpoke/pvpoke/refs/heads/master/src/data/gamemaster.min.json', {
       body: null,
       method: 'GET',
     })
@@ -51,11 +50,13 @@ const fetchRanking = async (rankingName = 'rankings-1500'): Promise<Ranking[]> =
   console.log(`Fetching ${rankingName}`);
 
   return (await (
-    await fetch(`https://pvpoke.com/data/rankings/all/overall/${rankingName}.json`, {
-      referrer: 'https://pvpoke.com/rankings/',
-      body: null,
-      method: 'GET',
-    })
+    await fetch(
+      `https://raw.githubusercontent.com/pvpoke/pvpoke/refs/heads/master/src/data/rankings/all/overall/${rankingName}.json`,
+      {
+        body: null,
+        method: 'GET',
+      },
+    )
   ).json()) as Ranking[];
 };
 
